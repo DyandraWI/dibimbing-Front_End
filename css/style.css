@@ -1,0 +1,580 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #F3B664;
+    --primary: #EC8F5E;
+    --secondary: #F1EB90;
+    --ijo: #9FBB73;
+}
+
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'poppins', sans-serif;
+    background-color: var(--bg);
+    counter-reset: #fff;
+    min-height: 2000px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(243, 182, 100, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    font-style: italic;
+}
+
+.navbar .navbar-logo span{
+    color: var(--primary);
+    font-size: 1.8rem;
+}
+
+.navbar .navbar-nav a{
+    color: #fff;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover{
+   color: var(--primary); 
+}
+
+.navbar .navbar-nav a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s;
+}
+
+.navbar .navbar-nav a:hover::after{
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a{
+    color: #fff;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover{
+    color: var(--primary);
+}
+
+#hamburger-menu{
+    display: none;
+}
+
+/* Hero Section */
+.hero{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(../image/image-hero-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(243, 182, 100, 1) 8%, rgba(255, 255, 255, 0) 35%);
+}
+
+.hero .content{
+    padding: 1.4rem 7%;
+    max-width: 66rem;
+}
+
+.hero .content h1{
+    font-size: 3rem;
+    color: #000000;
+    text-shadow: 1px 1px 3px ;
+    line-height: 1.2;
+
+}
+
+.hero .content h1 span{
+    color: var(--primary);
+}
+
+.hero .content p{
+    font-size: 1.2rem;
+    margin-top: 1.2rem;
+    line-height: 1.4;
+    font-weight: 200;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .content .cta{
+    margin-top: 1.2rem;
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #EC8F5E;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px;
+}
+/* Hero Section End */
+
+/* About Section Start */
+.about,
+.menu,
+.contact{
+    padding: 7rem 7% 1.4rem;
+}
+
+.about h2,
+.menu h2,
+.contact h2{
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+    color: #fff;
+}
+
+.about h2 span,
+.menu h2 span,
+.contact h2 span{
+    color: #F1EB90;
+}
+
+.about .row {
+    display: flex;
+}
+
+.about .row .about-img{
+    flex: 1 1 150rem;
+    margin-left: -10%;
+}
+
+.about .row .about-img img{
+    width: 100%;
+}
+
+.about .row .content{
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+}
+
+.about .row .content-about h3{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+   
+}
+
+.about .row .content-about p{
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    font: 100;
+    line-height: 1.6;
+}
+/* About Section End */
+
+/* Menu Section Start */
+.menu{
+    background-color: var();
+}
+
+.menu h2,
+.contact h2{
+    margin-bottom: 0rem;
+}
+
+.menu p,
+.contact p{
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.movie-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    width: 100%; /* Ensures full width of the grid item */
+    max-width: 250px; /* Sets maximum width for larger screens */
+    height: 350px; /* Uniform height for all cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between elements in the card */
+    align-items: center; /* Center align content */
+}
+
+/* Image styling inside card */
+.movie-card img {
+    width: 100%;  
+    height: 200px;  
+    object-fit: fill;  
+    object-position: center;  /* Center the image within its container */
+    border-radius: 8px 8px 0 0;  /* Rounded top corners to match the card's design */
+}
+
+/* Title styling inside card */
+.movie-card h3 {
+    margin: 25px 0 0;
+    font-size: 1.4rem;
+    color: #333;
+    flex-grow: 1; /* Allows the title to take up more space if needed */
+}
+
+/* Description styling inside card */
+.movie-card p {
+    margin: 0 10px 50px;
+    color: #777;
+    font-size: 1rem;
+    flex-shrink: 0; /* Prevents shrinking of text */
+}
+
+/* Hover effect for cards */
+.movie-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Responsive Grid Adjustments */
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 cards per row */
+    gap: 20px; /* Gap between each card */
+}
+
+/* Footer Section */
+.footer {
+    background-color: var(--ijo);
+    color: #fff;
+    margin-top: 5rem ;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.container-footer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.footer-logo h2 span {
+    color: var(--secondary);
+}
+
+.footer-logo p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links h3, .footer-contact h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--secondary);
+}
+
+.footer-contact p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links, .footer-contact {
+        margin-top: 1.5rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .footer-logo h2 {
+        font-size: 1.8rem;
+    }
+
+    .footer-logo p, .footer-contact p, .footer-links h3, .footer-contact h3 {
+        font-size: 1rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.9rem;
+    }
+
+    .social-icons {
+        gap: 0.5rem;
+    }
+}
+
+
+
+/* Media Query */
+
+/* Laptop */
+@media (max-width: 1366px){
+    html{
+        font-size: 90%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px){
+    html{
+        font-size: 60%;
+    }
+
+    #hamburger-menu{
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active{
+        right: 0;
+    }
+
+    .navbar .navbar-nav a{
+        color: var(--bg);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        transform-origin: 0 0;
+    }
+
+    .navbar .navbar-nav a:hover::after{
+        transform: scaleX(0.2);
+    }
+
+    .hero{
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: -50vh;
+    }
+
+    .about .row{
+        flex-wrap: wrap;
+    }
+
+    .about .row .about-img img{
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about .row .content-about{
+        padding: 0;
+    }
+
+    .about .row .content-about h3{
+        margin-top: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .abot .row .content-about p {
+        font-size: 2rem;
+    }
+
+    .movies-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+    }
+    
+    .movie-card.alpukat-card {
+        order: 1; /* Ensure Jus Alpukat appears first */
+        flex: 0 0 80%; /* Adjust width to be 80% of the screen width */
+        max-width: 300px; /* Set a maximum width to prevent too wide scaling */
+        margin: 0 auto; /* Auto margins for horizontal centering */
+    }
+
+    .movie-card {
+        max-width: 100%; /* Full width within grid */
+        height: 350px; /* Consistent height for cards */
+    }
+    
+    .movie-card img {
+        height: 200px; /* Mengatur tinggi gambar agar proporsional */
+    }
+
+    .movie-card h3 {
+        font-size: 1.4rem; /* Mengatur ukuran font judul */
+    }
+
+    .movie-card p {
+        font-size: 0.9rem; /* Mengatur ukuran font deskripsi */
+    }
+}
+
+/* Moobile Phone */
+@media (max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+
+    .hero{
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position:-80vh;
+    }
+
+    .hero .content{
+        margin-top: -30%;
+    }
+
+    .hero::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 30%; /* Sesuaikan tinggi gradient */
+        bottom: 0;
+        left: 0; /* Pastikan gradient menempel pada sisi kiri */
+        right: 0; /* Pastikan gradient menempel pada sisi kanan */
+        background: linear-gradient(0deg, rgba(243, 182, 100, 1) 8%, rgba(255, 255, 255, 0) 35%);
+        z-index: 1; /* Pastikan gradient tetap berada di atas hero image */
+    }
+
+    .hero .content {
+        position: relative;
+        z-index: 2; /* Pastikan konten berada di atas gradient */
+    }
+
+    .movies-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on smartphones */
+    }
+
+    .movie-card {
+        max-width: 100%; /* Full width within grid */
+        height: 300px; /* Adjusted height for smaller screens */
+    }
+    
+    .movie-card img {
+        height: 180px; /* Adjusted height for images on smaller screens */
+    }
+
+    .movie-card h3 {
+        font-size: 1.2rem; /* Smaller font size for titles */
+    }
+
+    .movie-card p {
+        font-size: 0.8rem; /* Smaller font size for descriptions */
+    }
+}
